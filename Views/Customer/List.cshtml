@@ -1,0 +1,64 @@
+﻿@using customer.Dtos
+@model List<ResultCustomerDto>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <table> 
+       <thead>
+           <tr>
+               <th>ıd</th>
+               <th>FirstName</th>
+              
+               <th>address</th>
+               <th>Email</th>
+
+               <th>phonumber</th>
+               <th>IsPremiumMember</th>
+               
+           </tr>
+       </thead>
+
+       <tbody>
+           @foreach(var item in Model)
+                {
+            <tr>
+                
+                    <th>@item.Id</th>
+                    <th>@item.FirstName</th>
+                   
+                    <th>@item.Address</th>
+                    <th>@item.Email</th>
+                    <th>@item.PhoneNumber</th>
+                    <th>@item.IsPremiumMember</th>
+                   
+                        <td>
+                            <a asp-action="DeleteCustomer" asp-route-id="@item.Id" class="btn btn-dark">Sil
+
+                            </a>
+    
+                            <td> 
+
+    <a asp-action="EditCustomer" asp-route-id="@item.Id" class="btn btn-outline-danger">Güncelle</a>
+
+    
+</td>
+
+                
+            </tr>
+                }
+       </tbody>
+
+
+    </table>
+    merhaba dünya
+</body>
+</html>
